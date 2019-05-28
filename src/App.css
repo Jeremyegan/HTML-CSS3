@@ -1,33 +1,162 @@
 .App {
+  box-sizing: border-box;
+  width: 100%;
   text-align: center;
+  position: absolute;
+  background-color: black;
+  image-rendering: auto;
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-image: url("https://blackrockdigital.github.io/startbootstrap-agency/img/header-bg.jpg");
+  background-position-x: none;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+header.masthead {
+  color: rgb(250, 247, 240);
+  width: 100%;
+  height: 100vh;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  background-color: transparent ;
   display: flex;
-  flex-direction: column;
+  border: 2px dashed darkorchid;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 1em 5em;
+  background-color: transparent;
+  border: 2px solid yellow ;
+  width: 100%;
+}
+
+.title {
+  color: goldenrod;
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   color: white;
+  font-family: Arial;
+  background-color: transparent;
 }
 
-.App-link {
-  color: #61dafb;
+p {
+  margin: 10px;
+  font-size: 12px;
 }
 
-@keyframes App-logo-spin {
+.ham {
+  display: none;
+}
+
+#menu-switch {
+  opacity: 0;
+}
+
+#menu {
+  display: none;
+  position: fixed;
+  top: -240;
+  width: 100%;
+  padding: 50px 0;
+  transition: all .3s ease-in;
+  text-align: left;
+  background-color: black;
+}
+
+#menu ul {
+  padding: 0;
+  margin-top: 30px;
+  list-style: none;
+}
+
+@keyframes drop {
   from {
-    transform: rotate(0deg);
+    top: 0px;
+  }
+  70% {
+    top: 165px;
+    animation-timing-function: ease-in;
   }
   to {
-    transform: rotate(360deg);
+    top: 150px;
+    animation-timing-function: ease-out;
   }
+}
+
+
+@media(max-width: 988px) {
+  nav {
+    display: none;
+  }
+
+  .menu-content {
+    font-family: 'Oswald', sans-serif; 
+    padding: 0 0 0 50px;
+  }
+
+  .collapsible-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 0px 30px;
+  }
+
+  .collapsible-menu ul {
+      list-style-type: none;
+      padding: 0;
+  }
+
+  .collapsible-menu a {
+      display:block;
+      padding: 10px;
+      text-decoration: none;
+  }
+
+  .collapsible-menu label {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 56px;
+    display: block;
+    cursor: pointer;
+    background: no-repeat left center;
+    padding: 10px 0 10px 50px;
+  }
+
+  input#menu {
+    display: none;
+  }
+
+  .menu-content {
+    max-height: 0;
+    overflow: hidden;
+    font-family: sans-serif; 
+    padding: 0 0 0 50px;
+  }
+  
+  /* Toggle Effect */
+  input:checked ~ label {
+
+  }
+
+  input:checked ~ .menu-content {
+    max-height: 100%;
+  }
+
+
+
 }
